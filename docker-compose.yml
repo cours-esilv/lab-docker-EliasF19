@@ -1,0 +1,14 @@
+services:
+  my-back-service:
+    image: eliasf19/ml_ops:latest
+    ports:
+      - "5000:5000"
+    environment:
+      - CURRENT_ENVIRONMENT=development   
+
+  my-front-service:
+    image: eliasf19/ml_ops:my-image-front
+    ports:
+      - "8080:80"
+    environment:
+      - WS_BACK_URL=http://my-back-service:5000
