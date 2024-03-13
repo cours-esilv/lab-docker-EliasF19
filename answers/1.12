@@ -1,0 +1,6 @@
+docker network create my-network
+
+docker run -d --name back_app_container --network my-network -e CURRENT_ENVIRONMENT=development -p 5000:5000 eliasf19/ml_ops:latest
+
+docker run -d --name front_app_container --network my-network -p 8080:80 -e WS_BACK_URL=http://172.17.0.2:5000 eliasf19/ml_ops:my-image-front
+

@@ -1,0 +1,3 @@
+docker stop front_app_container back_app_container
+docker rm front_app_container back_app_container
+docker rmi eliasf19/ml_ops:latest eliasf19/ml_ops:my-image-front
